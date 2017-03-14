@@ -1,5 +1,3 @@
-var path = "#grande-node";
-
 function getFirstSelector(selector) {
   return document.querySelector(selector);
 }
@@ -19,11 +17,9 @@ function increaseRankBy(n) {
 }
 
 function deepestChild() {
-  if (document.querySelector(path) === null) {
-    return path;
-  } else {
-    path.append(document.querySelector(path));;
-    deepestChild();
-    return path;
+  var deepestNode = document.querySelector("#grand-node");
+  while (deepestNode.children[0] !== undefined) {
+    deepestNode = deepestNode.children[0];
   }
+  return deepestNode;
 }
